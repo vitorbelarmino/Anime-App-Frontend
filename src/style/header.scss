@@ -1,0 +1,23 @@
+header {
+  // background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 30px;
+  align-items: center;
+
+  .center{
+    // background-color: green;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 20px;
+    width: 60%;
+
+    p {
+      font-size: 19px;
+      padding: 0px 10px;
+    }
+  }
+  .icon{
+    padding: 7px;
+  }
+}
