@@ -1,9 +1,11 @@
 import Header from './components/Header';
+import Highlights from './components/highlights';
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="App">
-      <Header/>
+      <Header />
+      <Highlights />
     </div>
   );
 }
