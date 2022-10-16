@@ -5,7 +5,6 @@ import './style.scss';
 
 function Highlights(): JSX.Element {
   const { highlights } = useContext(Context);
-  console.log(highlights);
 
   return (
     <div className="container">
