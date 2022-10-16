@@ -1,15 +1,14 @@
 import { User, Shuffle, MagnifyingGlass } from 'phosphor-react';
-import '../style/header.scss';
+import './style.scss';
 function Header(): JSX.Element {
+  const tags = ['Home', 'Aplicativos', 'Discord', 'Contato'];
   return (
     <header>
       <img src="https://betteranime.net/img/logo_shadow.png" alt="logo" />
       <div className="center">
-        <p>Home</p>
-        <p>Lista</p>
-        <p>Aplicativo</p>
-        <p>Discord</p>
-        <p>Contado</p>
+        {tags.map((tag, index) => (
+          <p key={index}>{tag}</p>
+        ))}
       </div>
       <div className="right">
         <MagnifyingGlass

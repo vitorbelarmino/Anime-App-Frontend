@@ -1,0 +1,46 @@
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.container {
+  @include fastDisplay(space-evenly, row, nowrap);
+  width: 100%;
+
+  .card {
+    width: 17%;
+    height: 300px;
+    overflow: hidden;
+    transition: 0.7s;
+
+    &:hover {
+      width: 26%;
+      // overflow: initial;
+      .imageBox {
+        img {
+          transform: translateX(-10%);
+        }
+      }
+    }
+
+    .imageBox {
+      @include fastDisplay(center, row, nowrap);
+      width: 500px;
+
+      img {
+        width: 500px;
+        height: 400px;
+        object-fit: cover;
+        aspect-ratio: initial;
+        transform: translateX(-18%);
+        transition: 0.7s;
+      }
+    }
+
+    .subCard {
+      width: 500px;
+    }
+  }
+}

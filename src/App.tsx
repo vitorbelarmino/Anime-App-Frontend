@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import Highlights from './components/highlights';
+import Highlights from './components/Highlights';
 
 function App(): JSX.Element {
   return (
