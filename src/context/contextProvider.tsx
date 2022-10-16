@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { IAnime } from '../interfaces/IAnime';
-import { fetchAllAnimes, fetchHighlights } from '../service';
+import { fetchAllAnimes, fetchHighlights } from '../utils/api';
 import Context from './context';
 
 interface IProps {
