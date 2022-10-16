@@ -48,6 +48,7 @@
     "@typescript-eslint/consistent-type-assertions": [
       "warn",
       { "assertionStyle": "as" }
-    ]
+    ],
+    "@typescript-eslint/restrict-template-expressions": "error"
   }
 }

@@ -27,8 +27,14 @@ export function ContextProvider({ children }: IProps): JSX.Element {
   };
 
   const getLatestEpisodes = async (): Promise<void> => {
+    const bannedImage =
+      'https://cdn.myanimelist.net/images/icon-banned-youtube-rect.png';
     const result = await fetchLatestEpisodes();
-    setLatestEpisodes(result);
+    result.forEach((e) => console.log(e.entry.images.jpg.image_url));
+    const filter = result.filter(
+      (e) => e.entry.images.jpg.image_url !== bannedImage
+    );
+    setLatestEpisodes(filter);
   };
 
   useEffect(() => {
