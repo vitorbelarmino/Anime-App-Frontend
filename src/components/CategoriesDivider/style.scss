@@ -19,15 +19,11 @@
     }
 
     p {
-      justify-content: flex-start;
       padding-left: 10px;
     }
   }
 
   .right {
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
     .button {
       @include fastDisplay(center, center, row, nowrap);
       width: 110px;
