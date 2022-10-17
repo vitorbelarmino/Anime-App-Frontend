@@ -29,21 +29,41 @@
     align-items: flex-end;
     justify-content: end;
     .button {
+      @include fastDisplay(center, center, row, nowrap);
       width: 110px;
-      padding: 7px 10px;
-      display: inline-flex;
+      // padding: 7px 10px;
+      // display: inline-flex;
       height: 35px;
       color: white;
-      background-color: blue;
+      background-color: rgb(21, 21, 121);
       border-radius: 7%;
+      cursor: pointer;
+      transition: 0.5s;
+
+      .plus {
+        @include fastDisplay(center, center, row, nowrap);
+        height: 25px;
+        width: 25px;
+        margin-right: 5px;
+
+        p {
+          line-height: 25px;
+          font-size: 25px;
+        }
+      }
+
+      &:hover {
+        background-color: rgb(35, 35, 199);
+      }
     }
-    p:nth-child(1) {
-      font-size: 22px;
-    }
-    p:nth-child(2) {
-      font-size: 15px;
-      padding-top: 3px;
-      padding-left: 6px;
-    }
+
+    // p:nth-child(1) {
+    //   font-size: 22px;
+    // }
+    // p:nth-child(2) {
+    //   font-size: 15px;
+    //   padding-top: 3px;
+    //   padding-left: 6px;
+    // }
   }
 }

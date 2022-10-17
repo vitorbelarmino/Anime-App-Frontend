@@ -13,7 +13,9 @@ export function CategoriesDivider(props: IProps): JSX.Element {
       </div>
       <div className="right">
         <div className="button">
-          <p className="plus">+</p>
+          <div className="plus">
+            <p>+</p>
+          </div>
           <p>Ver mais</p>
         </div>
       </div>

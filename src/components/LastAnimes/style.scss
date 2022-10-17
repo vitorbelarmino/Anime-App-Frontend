@@ -13,11 +13,11 @@
 
     .card-anime {
       @include fastDisplay(flex-start, space-between, column, nowrap);
-      // justify-content: space-around;
       width: 16%;
       height: 300px;
       margin: 10px 15px;
       border-radius: 5%;
+      cursor: pointer;
 
       p {
         text-shadow: 1px 1px 1px black;
