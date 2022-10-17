@@ -1,0 +1,49 @@
+@mixin fastDisplay($a, $x, $y, $z) {
+  display: flex;
+  align-items: $a;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.nav-episodes {
+  @include fastDisplay(center, space-between, row, nowrap);
+  width: 75%;
+  margin: 30px 0;
+
+  .left {
+    @include fastDisplay(center, flex-start, row, nowrap);
+
+    .icon {
+      border-radius: 100%;
+      margin-right: 3px;
+    }
+
+    p {
+      justify-content: flex-start;
+      padding-left: 10px;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    .button {
+      width: 110px;
+      padding: 7px 10px;
+      display: inline-flex;
+      height: 35px;
+      color: white;
+      background-color: blue;
+      border-radius: 7%;
+    }
+    p:nth-child(1) {
+      font-size: 22px;
+    }
+    p:nth-child(2) {
+      font-size: 15px;
+      padding-top: 3px;
+      padding-left: 6px;
+    }
+  }
+}

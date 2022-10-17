@@ -1,6 +1,6 @@
 import { User, Shuffle, MagnifyingGlass } from 'phosphor-react';
 import './style.scss';
-function Header(): JSX.Element {
+export function Header(): JSX.Element {
   const tags = ['Home', 'Aplicativos', 'Discord', 'Contato'];
   return (
     <header>
@@ -23,5 +23,3 @@ function Header(): JSX.Element {
     </header>
   );
 }
-
-export default Header;

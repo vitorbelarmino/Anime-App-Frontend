@@ -1,0 +1,29 @@
+@mixin fastDisplay($a, $x, $y, $z) {
+  display: flex;
+  align-items: $a;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.body-episodes {
+  @include fastDisplay(center, center, row, wrap);
+
+  .last-episodes {
+    @include fastDisplay(center, center, row, wrap);
+    width: 75%;
+
+    .episode-card {
+      @include fastDisplay(flex-start, flex-end, column, nowrap);
+      width: 22%;
+      height: 200px;
+      margin: 10px 15px;
+      border-radius: 2%;
+
+      p {
+        text-shadow: 0 0 0.2em black;
+        margin-left: 10px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

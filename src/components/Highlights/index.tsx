@@ -3,12 +3,12 @@ import Context from '../../context/context';
 import { sliceString } from '../../service';
 import './style.scss';
 
-function Highlights(): JSX.Element {
-  const { highlights } = useContext(Context);
+export function Highlights(): JSX.Element {
+  const { currentSeasons } = useContext(Context);
 
   return (
     <div className="container">
-      {highlights.map((a) => (
+      {currentSeasons.slice(0, 6).map((a) => (
         <div key={a.mal_id} className="card">
           <span className="imageBox">
             <img src={a.images.jpg.large_image_url} alt={a.title} />
@@ -33,5 +33,3 @@ function Highlights(): JSX.Element {
     </div>
   );
 }
-
-export default Highlights;

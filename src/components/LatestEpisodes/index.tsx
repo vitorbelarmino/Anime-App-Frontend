@@ -1,6 +1,6 @@
-import { Plus, PlusCircle } from 'phosphor-react';
 import { useContext } from 'react';
 import Context from '../../context/context';
+import { CategoriesDivider } from '../CategoriesDivider';
 import './style.scss';
 
 export function LatestEpisodes(): JSX.Element {
@@ -8,23 +8,7 @@ export function LatestEpisodes(): JSX.Element {
 
   return (
     <div className="body-episodes">
-      <div className="nav-episodes">
-        <div className="left">
-          <PlusCircle
-            size={50}
-            color="#1409ae"
-            weight="bold"
-            className="icon"
-          />
-          <h2>Últimos Lançamentos</h2>
-        </div>
-        <div className="right">
-          <p className="button">
-            <Plus size={24} color="#fcfcfc" weight="light" className="icon" />
-            Ver mais
-          </p>
-        </div>
-      </div>
+      <CategoriesDivider name="Últimos episódios" />
       <div className="last-episodes">
         {latestEpisodes.slice(0, 12).map((ep) => (
           <div
