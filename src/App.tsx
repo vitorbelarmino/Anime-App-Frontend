@@ -1,3 +1,4 @@
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Highlights } from './components/Highlights';
 import { LastAnimes } from './components/LastAnimes';
@@ -10,6 +11,7 @@ function App(): JSX.Element {
       <Highlights />
       <LatestEpisodes />
       <LastAnimes />
+      <Footer />
     </div>
   );
 }

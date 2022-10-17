@@ -1,0 +1,30 @@
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+footer {
+  @include fastDisplay(flex-start, column, wrap);
+  height: 200px;
+  background-image: url(https://images.alphacoders.com/996/996655.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 30%;
+  text-shadow: 2px 2px 2px black;
+  padding-top: 30px;
+
+  h1 {
+    padding-bottom: 10px;
+  }
+
+  div {
+    @include fastDisplay(center, row, wrap);
+
+    p {
+      padding-right: 10px;
+      padding-top: 10px;
+    }
+  }
+}
