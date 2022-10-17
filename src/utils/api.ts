@@ -11,8 +11,8 @@ export async function fetchAllAnimes(): Promise<IAnime[]> {
   return data.data;
 }
 
-export async function fetchHighlights(): Promise<IAnime[]> {
-  const { data } = await api.get('/seasons/now?limit=6');
+export async function fetchCurrentSeasons(): Promise<IAnime[]> {
+  const { data } = await api.get('/seasons/now');
   return data.data;
 }
 

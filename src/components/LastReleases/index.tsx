@@ -1,11 +1,10 @@
-import { Cookie, Plus, PlusCircle } from 'phosphor-react';
+import { Plus, PlusCircle } from 'phosphor-react';
 import { useContext } from 'react';
 import Context from '../../context/context';
 import './style.scss';
 
 export function LatestEpisodes(): JSX.Element {
   const { latestEpisodes } = useContext(Context);
-  console.log(latestEpisodes);
 
   return (
     <div className="body-episodes">

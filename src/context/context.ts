@@ -5,7 +5,7 @@ import { ILatestEpisodes } from '../interfaces/ILatestEpisodes';
 interface IProvider {
   allAnimes: IAnime[];
   setAllAnimes: React.Dispatch<React.SetStateAction<IAnime[]>>;
-  highlights: IAnime[];
+  currentSeasons: IAnime[];
   latestEpisodes: ILatestEpisodes[];
 }
 

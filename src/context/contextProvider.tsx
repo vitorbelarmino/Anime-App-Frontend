@@ -3,7 +3,7 @@ import { IAnime } from '../interfaces/IAnime';
 import { ILatestEpisodes } from '../interfaces/ILatestEpisodes';
 import {
   fetchAllAnimes,
-  fetchHighlights,
+  fetchCurrentSeasons,
   fetchLatestEpisodes
 } from '../utils/api';
 import Context from './context';
@@ -13,7 +13,7 @@ interface IProps {
 }
 export function ContextProvider({ children }: IProps): JSX.Element {
   const [allAnimes, setAllAnimes] = useState<IAnime[]>([]);
-  const [highlights, setHighlights] = useState<IAnime[]>([]);
+  const [currentSeasons, setCurrentSeasons] = useState<IAnime[]>([]);
   const [latestEpisodes, setLatestEpisodes] = useState<ILatestEpisodes[]>([]);
 
   const getAnime = async (): Promise<void> => {
@@ -22,8 +22,8 @@ export function ContextProvider({ children }: IProps): JSX.Element {
   };
 
   const getHighlights = async (): Promise<void> => {
-    const result = await fetchHighlights();
-    setHighlights(result);
+    const result = await fetchCurrentSeasons();
+    setCurrentSeasons(result);
   };
 
   const getLatestEpisodes = async (): Promise<void> => {
@@ -44,8 +44,8 @@ export function ContextProvider({ children }: IProps): JSX.Element {
   }, []);
 
   const value = useMemo(
-    () => ({ allAnimes, setAllAnimes, highlights, latestEpisodes }),
-    [allAnimes, setAllAnimes, highlights, latestEpisodes]
+    () => ({ allAnimes, setAllAnimes, currentSeasons, latestEpisodes }),
+    [allAnimes, setAllAnimes, currentSeasons, latestEpisodes]
   );
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
