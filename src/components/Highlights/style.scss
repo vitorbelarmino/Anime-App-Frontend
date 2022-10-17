@@ -14,11 +14,16 @@
     height: 300px;
     overflow: hidden;
     transition: 0.7s;
-    cursor: pointer;
+    position: relative;
 
     &:hover {
       width: 26%;
-      // overflow: initial;
+
+      .subCard {
+        margin-left: 0px;
+        width: 100%;
+      }
+
       .imageBox {
         img {
           transform: translateX(-10%);
@@ -41,7 +46,45 @@
     }
 
     .subCard {
-      width: 500px;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      margin-left: 100%;
+      top: 0px;
+      width: 150%;
+      height: 100%;
+      transition: 0.5s;
+
+      p {
+        margin: 5px;
+      }
+
+      .genre {
+        @include fastDisplay(flex-start, row, wrap);
+
+        p {
+          padding: 4px;
+          margin-right: 5px;
+          border: 1px solid white;
+          border-radius: 25px;
+          font-size: 10px;
+        }
+      }
+
+      .highlights-synopsis {
+        p {
+          font-size: 13px;
+        }
+      }
+
+      button {
+        background-color: rgb(35, 35, 199);
+        border-radius: 25px;
+        border-style: none;
+        margin: 10px 5px;
+        color: white;
+        padding: 8px 15px;
+        cursor: pointer;
+      }
     }
   }
 }

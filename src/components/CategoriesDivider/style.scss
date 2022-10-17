@@ -31,8 +31,6 @@
     .button {
       @include fastDisplay(center, center, row, nowrap);
       width: 110px;
-      // padding: 7px 10px;
-      // display: inline-flex;
       height: 35px;
       color: white;
       background-color: rgb(21, 21, 121);
@@ -56,14 +54,5 @@
         background-color: rgb(35, 35, 199);
       }
     }
-
-    // p:nth-child(1) {
-    //   font-size: 22px;
-    // }
-    // p:nth-child(2) {
-    //   font-size: 15px;
-    //   padding-top: 3px;
-    //   padding-left: 6px;
-    // }
   }
 }

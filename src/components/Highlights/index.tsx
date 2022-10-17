@@ -10,20 +10,22 @@ export function Highlights(): JSX.Element {
     <div className="container">
       {currentSeasons.slice(0, 6).map((a) => (
         <div key={a.mal_id} className="card">
-          <span className="imageBox">
+          <p className="imageBox">
             <img src={a.images.jpg.large_image_url} alt={a.title} />
-          </span>
+          </p>
           <div className="subCard">
-            <span>{`${a.duration.slice(0, 2)} min`}</span>
-            {a.genres.map((genre, index) => (
-              <div key={index}>
-                <span>{genre.name}</span>
-              </div>
-            ))}
-            <span>{a.title}</span>
+            <p>{`${a.duration.slice(0, 2)} min`}</p>
+            <div className="genre">
+              {a.genres.map((genre, index) => (
+                <div key={index}>
+                  <p>{genre.name}</p>
+                </div>
+              ))}
+            </div>
+            <p>{a.title}</p>
             {a.synopsis !== null && (
               <div className="highlights-synopsis">
-                <span>{sliceString(a.synopsis, 160)}</span>
+                <p>{sliceString(a.synopsis, 160)}</p>
               </div>
             )}
             <button>Assistir</button>
