@@ -8,7 +8,12 @@ export function CategoriesDivider(props: IProps): JSX.Element {
   return (
     <div className="nav-episodes">
       <div className="left">
-        <PlusCircle size={24} color="#1409ae" weight="fill" className="icon" />
+        <PlusCircle
+          size={24}
+          color="rgb(21, 21, 121)"
+          weight="fill"
+          className="icon"
+        />
         <p>{props.name}</p>
       </div>
       <div className="right">

@@ -19,11 +19,16 @@
       margin: 10px 15px;
       border-radius: 2%;
       cursor: pointer;
+      transition: 0.5s;
 
       p {
         text-shadow: 0 0 0.2em black;
         margin-left: 10px;
         margin-bottom: 5px;
+      }
+
+      &:hover {
+        transform: scale(1.04);
       }
     }
   }

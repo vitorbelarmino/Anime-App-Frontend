@@ -5,7 +5,6 @@ import './style.scss';
 
 export function LastAnimes(): JSX.Element {
   const { currentSeasons } = useContext(Context);
-  console.log(currentSeasons);
 
   return (
     <div className="body-animes">
