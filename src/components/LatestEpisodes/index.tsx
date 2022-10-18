@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import Context from '../../context/context';
 import { CategoriesDivider } from '../CategoriesDivider';
-import { LastAnimes } from '../LastAnimes';
 import './style.scss';
 
 export function LatestEpisodes(): JSX.Element {

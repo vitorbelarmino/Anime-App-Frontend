@@ -54,8 +54,13 @@
       height: 100%;
       transition: 0.5s;
 
+      .duration {
+        margin-top: 20px;
+      }
+
       p {
         margin: 5px;
+        margin-left: 15px;
       }
 
       .genre {
@@ -83,6 +88,7 @@
         margin: 10px 5px;
         color: white;
         padding: 8px 15px;
+        margin-left: 15px;
         cursor: pointer;
       }
     }

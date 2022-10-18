@@ -1,10 +1,11 @@
 import { User, Shuffle, MagnifyingGlass } from 'phosphor-react';
+import { logoMarca } from '../../assets';
 import './style.scss';
 export function Header(): JSX.Element {
   const tags = ['Home', 'Aplicativos', 'Discord', 'Contato'];
   return (
     <header>
-      <img src="https://betteranime.net/img/logo_shadow.png" alt="logo" />
+      <img src={logoMarca} alt="logo" width="230px" />
       <div className="center">
         {tags.map((tag, index) => (
           <p key={index}>{tag}</p>

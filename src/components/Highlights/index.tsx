@@ -14,7 +14,7 @@ export function Highlights(): JSX.Element {
             <img src={a.images.jpg.large_image_url} alt={a.title} />
           </p>
           <div className="subCard">
-            <p>{`${a.duration.slice(0, 2)} min`}</p>
+            <p className="duration">{`${a.duration.slice(0, 2)} min`}</p>
             <div className="genre">
               {a.genres.map((genre, index) => (
                 <div key={index}>

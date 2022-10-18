@@ -1,3 +1,10 @@
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -5,11 +12,9 @@ header {
   align-items: center;
 
   .center {
-    display: flex;
-    flex-direction: row;
+    @include fastDisplay(flex-start, row, wrap);
     padding: 0px 28px;
     width: 70%;
-
     p {
       font-size: 15px;
       padding: 0px 10px;
