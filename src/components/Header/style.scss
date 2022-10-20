@@ -21,6 +21,8 @@ header {
     }
   }
   .right {
+    @include fastDisplay(flex-start, row, nowrap);
+
     .icon {
       background-color: rgb(39, 41, 41);
       border-radius: 100%;

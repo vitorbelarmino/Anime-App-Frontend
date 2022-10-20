@@ -7,8 +7,7 @@
 
 .nav-episodes {
   @include fastDisplay(center, space-between, row, nowrap);
-  width: 75%;
-  margin-top: 20px;
+  margin: 20px 13%;
 
   .left {
     @include fastDisplay(center, flex-start, row, nowrap);
@@ -24,6 +23,8 @@
   }
 
   .right {
+    text-decoration: none;
+
     .button {
       @include fastDisplay(center, center, row, nowrap);
       width: 110px;

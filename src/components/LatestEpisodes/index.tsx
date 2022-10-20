@@ -1,17 +1,19 @@
 import { useContext } from 'react';
 import Context from '../../context/context';
-import { CategoriesDivider } from '../CategoriesDivider';
+
 import './style.scss';
 
-export function LatestEpisodes(): JSX.Element {
+interface IProps {
+  quantity: number;
+}
+export function LatestEpisodes(props: IProps): JSX.Element {
   const { latestEpisodes } = useContext(Context);
   console.log(latestEpisodes);
 
   return (
     <div className="body-episodes">
-      <CategoriesDivider name="Últimos episódios" />
       <div className="last-episodes">
-        {latestEpisodes.slice(0, 12).map((ep) => (
+        {latestEpisodes.slice(0, props.quantity).map((ep) => (
           <div
             key={ep.entry.mal_id}
             className="episode-card"

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Context from '../../context/context';
-import { CategoriesDivider } from '../CategoriesDivider';
+// import { CategoriesDivider } from '../CategoriesDivider';
 import './style.scss';
 
 export function LastAnimes(): JSX.Element {
@@ -8,7 +8,6 @@ export function LastAnimes(): JSX.Element {
 
   return (
     <div className="body-animes">
-      <CategoriesDivider name="Últimos animes" />
       <div className="last-animes">
         {currentSeasons.slice(0, 15).map((a) => (
           <div

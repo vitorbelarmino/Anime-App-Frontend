@@ -1,8 +1,10 @@
 import { PlusCircle } from 'phosphor-react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 interface IProps {
   name: string;
+  path: string;
 }
 export function CategoriesDivider(props: IProps): JSX.Element {
   return (
@@ -16,14 +18,14 @@ export function CategoriesDivider(props: IProps): JSX.Element {
         />
         <p>{props.name}</p>
       </div>
-      <div className="right">
+      <Link to={props.path} className="right">
         <div className="button">
           <div className="plus">
             <p>+</p>
           </div>
           <p>Ver mais</p>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
