@@ -6,7 +6,11 @@
 }
 
 .body-episodes {
-  @include fastDisplay(center, center, row, wrap);
+  @include fastDisplay(center, center, column, wrap);
+  h1 {
+    color: rgb(179, 175, 175);
+    margin-bottom: 10px;
+  }
 
   .last-episodes {
     @include fastDisplay(center, center, row, wrap);

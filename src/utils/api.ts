@@ -13,10 +13,12 @@ export async function fetchAllAnimes(): Promise<IAnime[]> {
 
 export async function fetchCurrentSeasons(): Promise<IAnime[]> {
   const { data } = await api.get('/seasons/now');
+
   return data.data;
 }
 
 export async function fetchLatestEpisodes(): Promise<ILatestEpisodes[]> {
   const { data } = await api.get('/watch/episodes');
+
   return data.data;
 }

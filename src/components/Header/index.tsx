@@ -15,11 +15,21 @@ export function Header(): JSX.Element {
         <MagnifyingGlass
           size={40}
           weight="bold"
-          color="#fafafa"
+          color="rgb(179, 175, 175)"
           className="icon"
         />
-        <Shuffle size={40} weight="bold" color="#fafafa" className="icon" />
-        <User size={40} weight="bold" color="#fafafa" className="icon" />
+        <Shuffle
+          size={40}
+          weight="bold"
+          color="rgb(179, 175, 175)"
+          className="icon"
+        />
+        <User
+          size={40}
+          weight="bold"
+          color="rgb(179, 175, 175)"
+          className="icon"
+        />
       </div>
     </header>
   );

@@ -5,8 +5,11 @@
   flex-flow: $y $z;
 }
 .body-animes {
-  @include fastDisplay(center, center, row, wrap);
-
+  @include fastDisplay(center, center, column, wrap);
+  h1 {
+    color: rgb(179, 175, 175);
+    margin-bottom: 10px;
+  }
   .last-animes {
     @include fastDisplay(center, space-between, row, wrap);
     width: 75%;

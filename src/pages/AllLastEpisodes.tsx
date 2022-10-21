@@ -6,7 +6,7 @@ export function AllLastEpisodes(): JSX.Element {
   return (
     <div className="home-page">
       <Header />
-      <LatestEpisodes quantity={20} />
+      <LatestEpisodes quantity={12} description="Últimos episódios" />
       <Footer />
     </div>
   );

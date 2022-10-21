@@ -23,6 +23,7 @@ export function ContextProvider({ children }: IProps): JSX.Element {
 
   const getHighlights = async (): Promise<void> => {
     const result = await fetchCurrentSeasons();
+
     setCurrentSeasons(result);
   };
 
@@ -30,6 +31,7 @@ export function ContextProvider({ children }: IProps): JSX.Element {
     const bannedImage =
       'https://cdn.myanimelist.net/images/icon-banned-youtube-rect.png';
     const result = await fetchLatestEpisodes();
+
     const filter = result.filter(
       (e) => e.entry.images.jpg.image_url !== bannedImage
     );

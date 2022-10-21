@@ -5,19 +5,19 @@ import './style.scss';
 
 interface IProps {
   quantity: number;
+  description?: string;
 }
 export function LatestEpisodes(props: IProps): JSX.Element {
   const { latestEpisodes } = useContext(Context);
-  console.log(latestEpisodes);
 
   return (
     <div className="body-episodes">
+      {props.description != null && <h1>{props.description}</h1>}
       <div className="last-episodes">
         {latestEpisodes.slice(0, props.quantity).map((ep) => (
           <div
             key={ep.entry.mal_id}
             className="episode-card"
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             style={{
               backgroundImage: `url(${ep.entry.images?.jpg.large_image_url})`,
               backgroundRepeat: 'no-repeat',

@@ -3,13 +3,19 @@ import Context from '../../context/context';
 // import { CategoriesDivider } from '../CategoriesDivider';
 import './style.scss';
 
-export function LastAnimes(): JSX.Element {
+interface IProps {
+  quantity: number;
+  description?: string;
+}
+
+export function LastAnimes(props: IProps): JSX.Element {
   const { currentSeasons } = useContext(Context);
 
   return (
     <div className="body-animes">
+      {props.description != null && <h1>{props.description}</h1>}
       <div className="last-animes">
-        {currentSeasons.slice(0, 15).map((a) => (
+        {currentSeasons.slice(0, props.quantity).map((a) => (
           <div
             key={a.mal_id}
             className="card-anime"

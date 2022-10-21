@@ -6,7 +6,7 @@ export function AllLastAnimes(): JSX.Element {
   return (
     <div className="home-page">
       <Header />
-      <LatestEpisodes quantity={20} />
+      <LatestEpisodes quantity={28} description="Últimos laçamentos" />
       <Footer />
     </div>
   );
