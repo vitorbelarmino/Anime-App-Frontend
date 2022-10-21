@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Belarnimes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 💻 Projeto
 
-In the project directory, you can run:
+Um Site de anime
 
-### `npm start`
+</br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Tecnologias
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-### `npm test`
+Front-end:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Desenvolvido usando: React, TypeScript, Sass, Axios, Prettier, e ESlint.
+</br>
 
-### `npm run build`
+## ⬇️ Como executar o projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Clone este repositório
+$ git clone git@github.com:serjofrancisco/ProjectTrybe-TFC.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Acesse a pasta do projeto no terminal/cmd
+$ cd Anime-App-Frontend
 
-### `npm run eject`
+# Instale as dependências
+$ npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Execute a aplicação
+$ npm start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# O App inciará na porta:3000 - acesse http://localhost:3000
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📌 Habilidades
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Nesse projeto, fui capaz de:
 
-## Learn More
+- Aprimorar minhas habilidades em React
+- Aprimorar minhas habilidades com o Sass
+- Aprimorar minhas habilidades com o ContexApi
+- Aprimorar minhas habilidades com TypeScript
+- Aprender a utilizar o axios para fazer solicitações a API
+- Aprimorar minha organização de código
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+</br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📝 Ajustes e melhorias
+
+O projeto possui melhorias pendentes, e possíveis atualizações serão voltadas nas seguintes tarefas:
+
+- [ ] Adicionar adicionar paginação quando entra em últimos episódio ou últimos animes
+- [ ] adicionar login de usuário
+- [ ] adicionar pagina de detalhes do episódio e anime
+- [ ] Desenvolvedor testes unitários para a aplicação!
+
+> Github: https://github.com/vitorbelarmino
+
+> Linkedin: https://www.linkedin.com/in/vitor-belarmino/
+
+> Email: vitor.belarmino@hotmail.com
