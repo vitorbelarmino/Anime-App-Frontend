@@ -1,14 +1,22 @@
 import { User, Shuffle, MagnifyingGlass } from 'phosphor-react';
+import { Link } from 'react-router-dom';
 import { logoMarca } from '../../assets';
 import './style.scss';
 export function Header(): JSX.Element {
-  const tags = ['Home', 'Aplicativos', 'Discord', 'Contato'];
+  const tags = [
+    { name: 'Home', path: '/' },
+    { name: 'animes', path: '/lastAnimes' },
+    { name: 'Últimos episódios', path: '/lastEpisodes' },
+    { name: 'Contato', path: '/' }
+  ];
   return (
     <header>
       <img src={logoMarca} alt="logo" width="230px" />
       <div className="center">
         {tags.map((tag, index) => (
-          <p key={index}>{tag}</p>
+          <Link key={index} to={tag.path} className="link">
+            {tag.name}
+          </Link>
         ))}
       </div>
       <div className="right">

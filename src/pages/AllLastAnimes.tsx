@@ -1,12 +1,12 @@
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
-import { LatestEpisodes } from '../components/LatestEpisodes';
+import { LastAnimes } from '../components/LastAnimes';
 
 export function AllLastAnimes(): JSX.Element {
   return (
     <div className="home-page">
       <Header />
-      <LatestEpisodes quantity={28} description="Últimos laçamentos" />
+      <LastAnimes quantity={-1} description="Últimos laçamentos" />
       <Footer />
     </div>
   );
