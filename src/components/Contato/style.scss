@@ -1,0 +1,41 @@
+@mixin fastDisplay($a, $x, $y, $z) {
+  display: flex;
+  align-items: $a;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+.contact-container {
+  @include fastDisplay(center, center, column, nowrap);
+  width: 100%;
+  height: 50vh;
+
+  .contact-bar {
+    background-color: #2b29d4;
+    width: 80%;
+    border-radius: 15px 15px 0px 0px;
+    padding: 10px;
+
+    p {
+      font-size: 30px;
+      font-weight: 100;
+      text-align: center;
+    }
+  }
+
+  .contact-contents {
+    @include fastDisplay(center, center, column, nowrap);
+    width: 80%;
+    height: 70%;
+    background-color: rgb(72, 73, 73);
+    border-radius: 0px 0px 15px 15px;
+
+    .links {
+      // background-color: red;
+      // padding: 100px;
+
+      .icons {
+        margin: 15px 15px;
+      }
+    }
+  }
+}

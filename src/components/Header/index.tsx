@@ -7,7 +7,7 @@ export function Header(): JSX.Element {
     { name: 'Home', path: '/' },
     { name: 'animes', path: '/lastAnimes' },
     { name: 'Últimos episódios', path: '/lastEpisodes' },
-    { name: 'Contato', path: '/' }
+    { name: 'Contato', path: '/contato' }
   ];
   return (
     <header>

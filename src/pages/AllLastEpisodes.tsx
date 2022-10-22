@@ -4,7 +4,7 @@ import { LatestEpisodes } from '../components/LatestEpisodes';
 
 export function AllLastEpisodes(): JSX.Element {
   return (
-    <div className="home-page">
+    <div className="last-Episodes-page">
       <Header />
       <LatestEpisodes quantity={12} description="Últimos episódios" />
       <Footer />

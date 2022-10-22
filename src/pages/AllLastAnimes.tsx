@@ -4,7 +4,7 @@ import { LastAnimes } from '../components/LastAnimes';
 
 export function AllLastAnimes(): JSX.Element {
   return (
-    <div className="home-page">
+    <div className="last-animes-page">
       <Header />
       <LastAnimes quantity={-1} description="Últimos laçamentos" />
       <Footer />
