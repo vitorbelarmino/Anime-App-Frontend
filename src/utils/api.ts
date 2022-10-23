@@ -1,6 +1,7 @@
 import { IAnime } from '../interfaces/IAnime';
 import axios from 'axios';
 import { ILatestEpisodes } from '../interfaces/ILatestEpisodes';
+import { IEpisode } from '../interfaces/IEpisode';
 
 const api = axios.create({
   baseURL: 'https://api.jikan.moe/v4'
@@ -20,5 +21,19 @@ export async function fetchCurrentSeasons(): Promise<IAnime[]> {
 export async function fetchLatestEpisodes(): Promise<ILatestEpisodes[]> {
   const { data } = await api.get('/watch/episodes');
 
+  return data.data;
+}
+
+export async function fetchAnimeById(id: number): Promise<IAnime> {
+  const { data } = await api.get(`/anime/${id}/full`);
+
+  return data.data;
+}
+
+export async function fetchEpisodeDetails(
+  animeId: number,
+  episodeId: number
+): Promise<IEpisode> {
+  const { data } = await api.get(`/anime/${animeId}/episodes/${episodeId}`);
   return data.data;
 }

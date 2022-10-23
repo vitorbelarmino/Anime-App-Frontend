@@ -1,7 +1,7 @@
 export interface IAnime {
   mal_id: number;
   url: string;
-  images: { [key: string]: Image };
+  images: Images;
   trailer: Trailer;
   approved: boolean;
   titles: Title[];
@@ -77,12 +77,6 @@ export enum DemographicType {
   Anime = 'anime'
 }
 
-export interface Image {
-  image_url: string;
-  small_image_url: string;
-  large_image_url: string;
-}
-
 export enum Rating {
   PG13Teens13OrOlder = 'PG-13 - Teens 13 or older',
   PGChildren = 'PG - Children',
@@ -118,11 +112,14 @@ export interface Trailer {
 }
 
 export interface Images {
-  image_url: null | string;
-  small_image_url: null | string;
-  medium_image_url: null | string;
-  large_image_url: null | string;
-  maximum_image_url: null | string;
+  jpg: Image;
+  webp: Image;
+}
+
+export interface Image {
+  image_url: string;
+  small_image_url: string;
+  large_image_url: string;
 }
 
 export enum DatumType {
