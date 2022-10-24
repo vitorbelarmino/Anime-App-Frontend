@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { IAnime } from '../../interfaces/IAnime';
 import { IEpisode } from '../../interfaces/IEpisode';
 import {
@@ -12,11 +12,14 @@ import './style.scss';
 export function EpisodeDetails(): JSX.Element {
   const { id, episode } = useParams();
 
+  console.log(id, episode);
   interface IAnimeDetails {
     anime: IAnime;
     episode: IEpisode;
     episodeList: IEpisode[];
   }
+
+  const navigate = useNavigate();
 
   const [animeDetails, setAnimeDetails] = useState<IAnimeDetails>(
     {} as IAnimeDetails
@@ -47,23 +50,46 @@ export function EpisodeDetails(): JSX.Element {
 
   useEffect(() => {
     getEpisode(id, episode).catch((err) => console.log(err));
-  }, []);
+    console.log(animeDetails);
+  }, [episode, id]);
 
   return (
     <div className="episode-container">
       {!loading && (
         <div className="content-container">
-          <img
-            src={animeDetails?.anime.images.jpg.large_image_url}
-            alt={`${animeDetails.anime.title} image`}
-            className="episode-image"
-          />
-          <div className="episode-info">
-            <h1>{animeDetails.episode.title}</h1>
-            <p>{`Duration: ${Math.ceil(
-              animeDetails.episode.duration / 60
-            )} min`}</p>
-            <p>{`Synopsis: ${animeDetails.episode?.synopsis}`}</p>
+          <div className="content-top">
+            <img
+              src={animeDetails.anime.images.jpg.large_image_url}
+              alt={`${animeDetails.anime.title} image`}
+              className="episode-image"
+            />
+            <div className="episode-info">
+              <h1>{animeDetails.episode.title}</h1>
+              <p>{`Duration: ${Math.ceil(
+                animeDetails.episode.duration / 60
+              )} min`}</p>
+              <p>{`Synopsis: ${animeDetails.episode?.synopsis}`}</p>
+            </div>
+          </div>
+          <div className="episodes-list">
+            {animeDetails.episodeList.slice(0, 8).map((ep, index) => (
+              <div
+                key={ep.mal_id}
+                className="episode-card"
+                onClick={() => {
+                  console.log(`/anime/${id as string}/episode/${ep.mal_id}`);
+
+                  navigate(`/anime/${id as string}/episode/${ep.mal_id}`);
+                }}
+              >
+                <img
+                  src={animeDetails.anime.images.jpg.large_image_url}
+                  alt={`${animeDetails.anime.title} image`}
+                  className="list-image"
+                />
+                <p>{`${index + 1} - ${ep.title}`}</p>
+              </div>
+            ))}
           </div>
         </div>
       )}

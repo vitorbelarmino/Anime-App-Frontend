@@ -9,11 +9,11 @@
   @include fastDisplay(center, center, row, nowrap);
 
   .content-container {
-    @include fastDisplay(center, center, row, nowrap);
+    // @include fastDisplay(center, center, column, nowrap);
     background-color: #343434;
     padding: 10px;
     margin-bottom: 10px;
-    height: 400px;
+    // height: 400px;
     width: 80%;
     border-radius: 25px;
 
@@ -32,6 +32,30 @@
 
       p {
         margin: 15px 20px;
+      }
+    }
+    .content-top {
+      @include fastDisplay(flex-start, flex-start, row, nowrap);
+    }
+
+    .episodes-list {
+      @include fastDisplay(flex-start, flex-start, row, wrap);
+      margin: 10px;
+
+      .episode-card {
+        @include fastDisplay(center, center, column, nowrap);
+        width: 160px;
+        padding: 10px;
+        margin: 5px 10px;
+        background-color: #494949;
+        border-radius: 15%;
+      }
+
+      .list-image {
+        border-radius: 25px;
+        margin-bottom: 5px;
+        width: 140px;
+        height: 120px;
       }
     }
   }
