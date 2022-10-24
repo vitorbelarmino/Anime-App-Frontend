@@ -34,6 +34,17 @@ export async function fetchEpisodeDetails(
   animeId: number,
   episodeId: number
 ): Promise<IEpisode> {
+  if (episodeId === 0) {
+    const { data } = await api.get(`/anime/${animeId}/episodes`);
+    return data.data;
+  }
   const { data } = await api.get(`/anime/${animeId}/episodes/${episodeId}`);
+  return data.data;
+}
+
+export async function fetchEpisodeDetailsList(
+  animeId: number
+): Promise<IEpisode[]> {
+  const { data } = await api.get(`/anime/${animeId}/episodes`);
   return data.data;
 }

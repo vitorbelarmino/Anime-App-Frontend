@@ -9,7 +9,6 @@ interface IProps {
 }
 export function LatestEpisodes(props: IProps): JSX.Element {
   const { latestEpisodes } = useContext(Context);
-  // console.log('episode', latestEpisodes);s
 
   const navigate = useNavigate();
 
