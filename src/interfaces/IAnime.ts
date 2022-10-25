@@ -32,7 +32,7 @@ export interface IAnime {
   licensors: Demographic[];
   studios: Demographic[];
   genres: Demographic[];
-  explicit_genres: any[];
+  explicit_genres: unknown[];
   themes: Demographic[];
   demographics: Demographic[];
 }
