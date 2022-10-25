@@ -75,11 +75,9 @@ export function EpisodeDetails(): JSX.Element {
               <div
                 key={ep.mal_id}
                 className="episode-card"
-                onClick={() => {
-                  console.log(`/anime/${id as string}/episode/${ep.mal_id}`);
-
-                  navigate(`/anime/${id as string}/episode/${ep.mal_id}`);
-                }}
+                onClick={() =>
+                  navigate(`/anime/${id as string}/episode/${ep.mal_id}`)
+                }
               >
                 <img
                   src={animeDetails.anime.images.jpg.large_image_url}
