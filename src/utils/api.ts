@@ -44,3 +44,8 @@ export async function fetchEpisodeDetailsList(
   const { data } = await api.get(`/anime/${animeId}/episodes`);
   return data.data;
 }
+
+export async function fetchRandomAnimeId(): Promise<number> {
+  const { data } = await api.get('/random/anime');
+  return data.data.mal_id as number;
+}
