@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Context from '../../context/context';
 // import { CategoriesDivider } from '../CategoriesDivider';
 import './style.scss';
@@ -10,6 +11,7 @@ interface IProps {
 
 export function LastAnimes(props: IProps): JSX.Element {
   const { currentSeasons } = useContext(Context);
+  const navigate = useNavigate();
 
   return (
     <div className="body-animes">
@@ -19,13 +21,13 @@ export function LastAnimes(props: IProps): JSX.Element {
           <div
             key={a.mal_id}
             className="card-anime"
-            // // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             style={{
               backgroundImage: `url(${a.images.jpg.large_image_url})`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
+            onClick={() => navigate(`/anime/${a.mal_id}`)}
           >
             <p>{`${Number(a.episodes)} episódios`}</p>
             <p>{a.title}</p>

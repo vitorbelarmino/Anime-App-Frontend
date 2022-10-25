@@ -9,15 +9,14 @@ import {
 } from '../../utils/api';
 import './style.scss';
 
+interface IAnimeDetails {
+  anime: IAnime;
+  episode: IEpisode;
+  episodeList: IEpisode[];
+}
+
 export function EpisodeDetails(): JSX.Element {
   const { id, episode } = useParams();
-
-  console.log(id, episode);
-  interface IAnimeDetails {
-    anime: IAnime;
-    episode: IEpisode;
-    episodeList: IEpisode[];
-  }
 
   const navigate = useNavigate();
 
