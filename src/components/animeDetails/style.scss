@@ -35,8 +35,7 @@
           }
 
           .anime-length {
-            @include fastDisplay(flex-start, center, row, nowrap);
-
+            @include fastDisplay(flex-start, flex-start, row, nowrap);
             width: 100%;
             padding: 10px;
             background-color: #545457;
@@ -44,7 +43,7 @@
             margin-bottom: 5px;
 
             .anime-length-content {
-              width: 45%;
+              width: 50%;
               height: 60px;
               margin-right: 10px;
               padding: 10px;
@@ -77,6 +76,28 @@
             height: 200px;
           }
         }
+      }
+    }
+
+    .anime-list {
+      @include fastDisplay(flex-start, flex-start, row, wrap);
+      margin: 10px;
+
+      .anime-card {
+        @include fastDisplay(center, center, column, nowrap);
+        width: 160px;
+        padding: 10px;
+        margin: 5px 10px;
+        background-color: #494949;
+        border-radius: 15%;
+        cursor: pointer;
+      }
+
+      .list-image {
+        border-radius: 25px;
+        margin-bottom: 5px;
+        width: 140px;
+        height: 120px;
       }
     }
   }
