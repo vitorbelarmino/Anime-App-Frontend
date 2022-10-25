@@ -24,10 +24,9 @@ export function AnimeDetails(): JSX.Element {
       const anime = await fetchAnimeById(Number(id));
       const episodeList = await fetchEpisodeDetailsList(Number(id));
       setAnimeDetails({ anime, episodeList });
+      setLoading(false);
     } catch (error) {
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -75,7 +74,12 @@ export function AnimeDetails(): JSX.Element {
                 </div>
                 <div className="anime-info-right">
                   <iframe
-                    src={anime.trailer.embed_url as string}
+                    src={
+                      anime.trailer.embed_url?.replace(
+                        'play=1',
+                        'play=0'
+                      ) as string
+                    }
                     frameBorder="0"
                     title={anime.title}
                     className="trailer"

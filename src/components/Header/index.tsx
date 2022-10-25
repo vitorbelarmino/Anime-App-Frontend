@@ -12,10 +12,13 @@ export function Header(): JSX.Element {
   ];
   const navigate = useNavigate();
 
-  const redirect = async (): Promise<boolean> => {
-    const animeId = await fetchRandomAnimeId();
-    navigate(`/anime/${animeId}`);
-    return true;
+  const redirect = async (): Promise<void> => {
+    try {
+      const animeId = await fetchRandomAnimeId();
+      navigate(`/anime/${animeId}`);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <header>

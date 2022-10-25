@@ -5,6 +5,8 @@
   flex-flow: $y $z;
 }
 
+$light-blue: rgb(33, 63, 235);
+
 footer {
   @include fastDisplay(flex-start, column, wrap);
   height: 200px;
@@ -19,12 +21,18 @@ footer {
     padding-bottom: 10px;
   }
 
-  div {
+  .links {
     @include fastDisplay(center, row, wrap);
 
-    p {
+    .link {
       padding-right: 10px;
       padding-top: 10px;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        color: $light-blue;
+      }
     }
   }
 }
