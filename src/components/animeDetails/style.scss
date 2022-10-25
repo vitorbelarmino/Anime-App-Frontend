@@ -5,8 +5,15 @@
   flex-flow: $y $z;
 }
 
+$light-gray: rgb(179, 175, 175);
+$medium-gray: rgb(75, 75, 77);
+$dark-gray: rgb(39, 41, 41);
+$dark-blue: rgb(20, 20, 97);
+$light-blue: rgb(33, 63, 235);
+
 .anime-container {
   @include fastDisplay(center, center, row, nowrap);
+  min-height: 62vh;
 
   .content-container {
     background-color: #343434;
@@ -38,7 +45,7 @@
             @include fastDisplay(flex-start, flex-start, row, nowrap);
             width: 100%;
             padding: 10px;
-            background-color: #545457;
+            background-color: $medium-gray;
             border-radius: 10px;
             margin-bottom: 5px;
 
@@ -47,7 +54,7 @@
               height: 60px;
               margin-right: 10px;
               padding: 10px;
-              border: 2px solid rgb(17, 4, 77);
+              border: 2px solid $dark-blue;
               border-radius: 10px;
             }
           }
@@ -55,14 +62,14 @@
             @include fastDisplay(flex-start, flex-start, row, nowrap);
             width: 100%;
             padding: 10px;
-            background-color: #545457;
+            background-color: $medium-gray;
             border-radius: 10px;
             margin-bottom: 5px;
 
             .score-content {
               width: 50%;
               padding: 10px;
-              border: 2px solid rgb(17, 4, 77);
+              border: 2px solid $dark-blue;
               border-radius: 10px;
               margin-right: 10px;
             }
@@ -88,9 +95,14 @@
         width: 160px;
         padding: 10px;
         margin: 5px 10px;
-        background-color: #494949;
+        background-color: $medium-gray;
         border-radius: 15%;
         cursor: pointer;
+
+        &:hover {
+          transform: scale(1.09);
+          background-color: $dark-gray;
+        }
       }
 
       .list-image {

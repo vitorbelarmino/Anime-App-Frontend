@@ -5,11 +5,14 @@
   flex-flow: $y $z;
 }
 
+$light-gray: rgb(179, 175, 175);
+$medium-gray: rgb(75, 75, 77);
+$dark-gray: rgb(39, 41, 41);
+
 .episode-container {
   @include fastDisplay(center, center, row, nowrap);
 
   .content-container {
-    // @include fastDisplay(center, center, column, nowrap);
     background-color: #343434;
     padding: 10px;
     margin-bottom: 10px;
@@ -20,6 +23,7 @@
     .episode-image {
       width: 300px;
       height: 100%;
+      border-radius: 25px;
     }
 
     .episode-info {
@@ -47,9 +51,14 @@
         width: 160px;
         padding: 10px;
         margin: 5px 10px;
-        background-color: #494949;
+        background-color: $medium-gray;
         border-radius: 15%;
         cursor: pointer;
+
+        &:hover {
+          transform: scale(1.09);
+          background-color: $dark-gray;
+        }
       }
 
       .list-image {

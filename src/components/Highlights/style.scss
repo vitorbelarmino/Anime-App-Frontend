@@ -5,6 +5,9 @@
   flex-flow: $y $z;
 }
 
+$dark-blue: rgb(20, 20, 97);
+$light-blue: rgb(33, 63, 235);
+
 .container {
   @include fastDisplay(space-evenly, row, nowrap);
   width: 100%;
@@ -68,7 +71,6 @@
 
         p {
           padding: 4px;
-          margin-right: 5px;
           border: 1px solid white;
           border-radius: 25px;
           font-size: 10px;
@@ -82,14 +84,20 @@
       }
 
       button {
-        background-color: rgb(35, 35, 199);
+        background-color: $dark-blue;
         border-radius: 25px;
         border-style: none;
         margin: 10px 5px;
         color: white;
         padding: 8px 15px;
-        margin-left: 15px;
+        margin-left: 10px;
         cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+          transform: scale(1.05);
+          background-color: $light-blue;
+        }
       }
     }
   }

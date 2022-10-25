@@ -6,16 +6,19 @@ import './style.scss';
 export function Header(): JSX.Element {
   const tags = [
     { name: 'Home', path: '/' },
-    { name: 'animes', path: '/lastAnimes' },
+    { name: 'Animes', path: '/lastAnimes' },
     { name: 'Últimos episódios', path: '/lastEpisodes' },
     { name: 'Contato', path: '/contato' }
   ];
   const navigate = useNavigate();
 
-  const redirect = async (): Promise<boolean> => {
-    const animeId = await fetchRandomAnimeId();
-    navigate(`/anime/${animeId}`);
-    return true;
+  const redirect = async (): Promise<void> => {
+    try {
+      const animeId = await fetchRandomAnimeId();
+      navigate(`/anime/${animeId}`);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <header>

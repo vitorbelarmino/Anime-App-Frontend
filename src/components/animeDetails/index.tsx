@@ -1,8 +1,10 @@
+/* eslint-disable multiline-ternary */
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { IAnime } from '../../interfaces/IAnime';
 import { IEpisode } from '../../interfaces/IEpisode';
 import { fetchAnimeById, fetchEpisodeDetailsList } from '../../utils/api';
+import { Loading } from '../loading';
 import './style.scss';
 
 interface IAnimeDetails {
@@ -22,10 +24,9 @@ export function AnimeDetails(): JSX.Element {
       const anime = await fetchAnimeById(Number(id));
       const episodeList = await fetchEpisodeDetailsList(Number(id));
       setAnimeDetails({ anime, episodeList });
+      setLoading(false);
     } catch (error) {
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -37,7 +38,9 @@ export function AnimeDetails(): JSX.Element {
   const { anime, episodeList } = animeDetails;
   return (
     <div className="anime-container">
-      {!loading && (
+      {loading ? (
+        <Loading />
+      ) : (
         <div className="content-container">
           <div className="content-top">
             <img
@@ -71,7 +74,12 @@ export function AnimeDetails(): JSX.Element {
                 </div>
                 <div className="anime-info-right">
                   <iframe
-                    src={anime.trailer.embed_url as string}
+                    src={
+                      anime.trailer.embed_url?.replace(
+                        'play=1',
+                        'play=0'
+                      ) as string
+                    }
                     frameBorder="0"
                     title={anime.title}
                     className="trailer"

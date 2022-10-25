@@ -1,0 +1,13 @@
+.loading-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+
+  h1 {
+    padding-bottom: 30px;
+  }
+
+  .loading-image {
+    height: 200px;
+  }
+}
