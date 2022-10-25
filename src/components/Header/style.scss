@@ -11,6 +11,10 @@ header {
   padding: 37px 88px;
   align-items: center;
 
+  img {
+    cursor: pointer;
+  }
+
   .center {
     @include fastDisplay(flex-start, row, wrap);
     padding: 0px 28px;
@@ -30,6 +34,7 @@ header {
       border-radius: 100%;
       padding: 7px;
       margin: 5px;
+      cursor: pointer;
     }
   }
 }

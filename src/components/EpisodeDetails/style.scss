@@ -1,0 +1,63 @@
+@mixin fastDisplay($a, $x, $y, $z) {
+  display: flex;
+  align-items: $a;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.episode-container {
+  @include fastDisplay(center, center, row, nowrap);
+
+  .content-container {
+    // @include fastDisplay(center, center, column, nowrap);
+    background-color: #343434;
+    padding: 10px;
+    margin-bottom: 10px;
+    // height: 400px;
+    width: 80%;
+    border-radius: 25px;
+
+    .episode-image {
+      width: 300px;
+      height: 100%;
+    }
+
+    .episode-info {
+      width: 70%;
+      height: 100%;
+
+      h1 {
+        margin: 10px 20px;
+      }
+
+      p {
+        margin: 15px 20px;
+      }
+    }
+    .content-top {
+      @include fastDisplay(flex-start, flex-start, row, nowrap);
+    }
+
+    .episodes-list {
+      @include fastDisplay(flex-start, flex-start, row, wrap);
+      margin: 10px;
+
+      .episode-card {
+        @include fastDisplay(center, center, column, nowrap);
+        width: 160px;
+        padding: 10px;
+        margin: 5px 10px;
+        background-color: #494949;
+        border-radius: 15%;
+        cursor: pointer;
+      }
+
+      .list-image {
+        border-radius: 25px;
+        margin-bottom: 5px;
+        width: 140px;
+        height: 120px;
+      }
+    }
+  }
+}

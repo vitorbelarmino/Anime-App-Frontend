@@ -1,10 +1,12 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Context from '../../context/context';
 import { sliceString } from '../../service';
 import './style.scss';
 
 export function Highlights(): JSX.Element {
   const { currentSeasons } = useContext(Context);
+  const navigate = useNavigate();
 
   return (
     <div className="container">
@@ -28,7 +30,9 @@ export function Highlights(): JSX.Element {
                 <p>{sliceString(a.synopsis, 160)}</p>
               </div>
             )}
-            <button>Assistir</button>
+            <button onClick={() => navigate(`/anime/${a.mal_id}`)}>
+              Detalhes
+            </button>
           </div>
         </div>
       ))}

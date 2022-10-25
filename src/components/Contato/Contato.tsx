@@ -1,5 +1,4 @@
-import { EnvelopeSimple, GithubLogo, LinkedinLogo } from 'phosphor-react';
-import { Link as a } from 'react-router-dom';
+import { GithubLogo, LinkedinLogo } from 'phosphor-react';
 import './style.scss';
 
 export function Contato(): JSX.Element {

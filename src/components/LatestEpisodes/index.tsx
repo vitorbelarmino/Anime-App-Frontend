@@ -1,6 +1,6 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Context from '../../context/context';
-
 import './style.scss';
 
 interface IProps {
@@ -9,6 +9,8 @@ interface IProps {
 }
 export function LatestEpisodes(props: IProps): JSX.Element {
   const { latestEpisodes } = useContext(Context);
+
+  const navigate = useNavigate();
 
   return (
     <div className="body-episodes">
@@ -24,6 +26,11 @@ export function LatestEpisodes(props: IProps): JSX.Element {
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
+            onClick={() =>
+              navigate(
+                `/anime/${ep.entry.mal_id}/episode/${ep.episodes[0].mal_id}`
+              )
+            }
           >
             <p>{ep.entry.title}</p>
             <p>{ep.episodes[0].title}</p>
