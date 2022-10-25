@@ -6,7 +6,7 @@ import './style.scss';
 export function Header(): JSX.Element {
   const tags = [
     { name: 'Home', path: '/' },
-    { name: 'animes', path: '/lastAnimes' },
+    { name: 'Animes', path: '/lastAnimes' },
     { name: 'Últimos episódios', path: '/lastEpisodes' },
     { name: 'Contato', path: '/contato' }
   ];

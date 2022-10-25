@@ -1,3 +1,4 @@
+/* eslint-disable multiline-ternary */
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { IAnime } from '../../interfaces/IAnime';
@@ -7,6 +8,7 @@ import {
   fetchEpisodeDetails,
   fetchEpisodeDetailsList
 } from '../../utils/api';
+import { Loading } from '../loading';
 import './style.scss';
 
 interface IAnimeDetails {
@@ -54,7 +56,9 @@ export function EpisodeDetails(): JSX.Element {
 
   return (
     <div className="episode-container">
-      {!loading && (
+      {loading ? (
+        <Loading />
+      ) : (
         <div className="content-container">
           <div className="content-top">
             <img

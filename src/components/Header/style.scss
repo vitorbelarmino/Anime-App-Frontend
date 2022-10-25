@@ -5,6 +5,9 @@
   flex-flow: $y $z;
 }
 
+$light-gray: rgb(179, 175, 175);
+$dark-gray: rgb(39, 41, 41);
+
 header {
   display: flex;
   flex-direction: row;
@@ -20,7 +23,7 @@ header {
     padding: 0px 28px;
     width: 70%;
     .link {
-      color: rgb(179, 175, 175);
+      color: $light-gray;
       font-size: 17px;
       padding: 0px 10px;
       text-decoration: none;
@@ -30,11 +33,16 @@ header {
     @include fastDisplay(flex-start, row, nowrap);
 
     .icon {
-      background-color: rgb(39, 41, 41);
+      background-color: $dark-gray;
       border-radius: 100%;
       padding: 7px;
       margin: 5px;
       cursor: pointer;
+
+      // &:hover {
+      //   background-color: $light-gray;
+      //   color: $dark-gray;
+      // }
     }
   }
 }
