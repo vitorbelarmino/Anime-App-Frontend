@@ -9,7 +9,7 @@ $light-blue: rgb(33, 63, 235);
 
 footer {
   @include fastDisplay(flex-start, column, wrap);
-  height: 150px;
+  height: 200px;
   background-image: url(https://images.alphacoders.com/996/996655.jpg);
   background-size: cover;
   background-repeat: no-repeat;
