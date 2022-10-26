@@ -11,6 +11,7 @@ $dark-gray: rgb(39, 41, 41);
 
 .episode-container {
   @include fastDisplay(center, center, row, nowrap);
+  min-height: 62vh;
 
   .content-container {
     background-color: #343434;
