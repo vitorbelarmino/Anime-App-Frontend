@@ -6,12 +6,14 @@
 }
 .body-animes {
   @include fastDisplay(center, center, column, wrap);
+
   h1 {
     color: rgb(179, 175, 175);
     margin-bottom: 10px;
   }
   .last-animes {
     @include fastDisplay(center, space-between, row, wrap);
+    min-height: 62vh;
     width: 75%;
 
     .card-anime {
@@ -25,8 +27,7 @@
 
       p {
         text-shadow: 1px 1px 1px black;
-        margin-left: 10px;
-        margin: 10px 0px;
+        margin: 10px 10px;
       }
 
       &:hover {
