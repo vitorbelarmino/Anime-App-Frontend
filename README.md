@@ -54,8 +54,8 @@ O projeto possui melhorias pendentes, e possíveis atualizações serão voltada
 
 - [ ] Adicionar adicionar paginação quando entra em últimos episódio ou últimos animes
 - [ ] adicionar login de usuário
-- [ ] adicionar pagina de detalhes do episódio e anime
-- [ ] Desenvolvedor testes unitários para a aplicação!
+- [ ] adicionar responsividade
+- [ ] Desenvolvedor testes unitários para a aplicação
 
 > Github: https://github.com/vitorbelarmino
 
