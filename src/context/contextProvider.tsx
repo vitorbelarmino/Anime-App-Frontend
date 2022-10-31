@@ -15,6 +15,8 @@ export function ContextProvider({ children }: IProps): JSX.Element {
   const [allAnimes, setAllAnimes] = useState<IAnime[]>([]);
   const [currentSeasons, setCurrentSeasons] = useState<IAnime[]>([]);
   const [latestEpisodes, setLatestEpisodes] = useState<ILatestEpisodes[]>([]);
+  const [searchActive, setSearchActive] = useState(false);
+  const [hamburgerActive, setHamburgerActive] = useState(false);
 
   const getAnime = async (): Promise<void> => {
     const result = await fetchAllAnimes();
@@ -45,8 +47,26 @@ export function ContextProvider({ children }: IProps): JSX.Element {
   }, []);
 
   const value = useMemo(
-    () => ({ allAnimes, setAllAnimes, currentSeasons, latestEpisodes }),
-    [allAnimes, setAllAnimes, currentSeasons, latestEpisodes]
+    () => ({
+      allAnimes,
+      setAllAnimes,
+      currentSeasons,
+      latestEpisodes,
+      searchActive,
+      setSearchActive,
+      hamburgerActive,
+      setHamburgerActive
+    }),
+    [
+      allAnimes,
+      setAllAnimes,
+      currentSeasons,
+      latestEpisodes,
+      searchActive,
+      setSearchActive,
+      hamburgerActive,
+      setHamburgerActive
+    ]
   );
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
