@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { logoMarca, logoMarcaSimples } from '../../assets';
 import Context from '../../context/context';
 import { useWindowSize } from '../../hooks/useWindowsSize';
+import { Hamburger } from './hamburger';
 import { HeaderImg } from './img';
 import { HeaderLinks } from './links';
 import { HeaderProfile } from './profile';
@@ -34,17 +35,7 @@ export function Header(): JSX.Element {
       {size < medium && size > small && (
         <header>
           <div className="header-content">
-            <List
-              size={40}
-              color="#fcfcfc"
-              weight="light"
-              className="hamburger"
-              values="hamburger"
-              onClick={() => {
-                setSearchActive(false);
-                setHamburgerActive(!hamburgerActive);
-              }}
-            />
+            <Hamburger />
             {searchActive && size <= 740 ? (
               <HeaderImg image={logoMarcaSimples} width={40} />
             ) : (
@@ -60,17 +51,7 @@ export function Header(): JSX.Element {
       {size <= small && (
         <header>
           <div className="header-content">
-            <List
-              size={40}
-              color="#fcfcfc"
-              weight="light"
-              className="hamburger"
-              values="hamburger"
-              onClick={() => {
-                setSearchActive(false);
-                setHamburgerActive(!hamburgerActive);
-              }}
-            />
+            <Hamburger />
             {size > 410 ? (
               <HeaderImg image={logoMarca} width={190} />
             ) : (
