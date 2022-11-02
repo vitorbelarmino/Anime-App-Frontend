@@ -153,3 +153,16 @@ $light-blue: rgb(33, 63, 235);
     }
   }
 }
+
+@media (max-width: 350px) {
+  header {
+    .center {
+      @include fastDisplay(center, flex-start, row, wrap);
+
+      .link {
+        margin: 5px 10px;
+        // width: 50%;
+      }
+    }
+  }
+}

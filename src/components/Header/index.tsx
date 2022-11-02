@@ -1,5 +1,4 @@
 /* eslint-disable multiline-ternary */
-import { List } from 'phosphor-react';
 import { useContext } from 'react';
 import { logoMarca, logoMarcaSimples } from '../../assets';
 import Context from '../../context/context';
@@ -12,8 +11,7 @@ import { Search } from './search';
 import './style.scss';
 
 export function Header(): JSX.Element {
-  const { searchActive, setSearchActive, hamburgerActive, setHamburgerActive } =
-    useContext(Context);
+  const { searchActive, hamburgerActive } = useContext(Context);
 
   const size = useWindowSize();
 
