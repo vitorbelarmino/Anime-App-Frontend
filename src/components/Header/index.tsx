@@ -22,7 +22,7 @@ export function Header(): JSX.Element {
 
   return (
     <>
-      {size >= medium && (
+      {size > medium && (
         <header>
           <div className="header-content">
             <HeaderImg image={logoMarca} width={230} />
@@ -32,7 +32,7 @@ export function Header(): JSX.Element {
         </header>
       )}
 
-      {size < medium && size > small && (
+      {size <= medium && size > small && (
         <header>
           <div className="header-content">
             <Hamburger />
