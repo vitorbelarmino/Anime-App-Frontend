@@ -5,6 +5,8 @@
   flex-flow: $y $z;
 }
 
+$small: 530px;
+$medium: 1060px;
 $dark-blue: rgb(20, 20, 97);
 $light-blue: rgb(33, 63, 235);
 
@@ -20,7 +22,7 @@ $light-blue: rgb(33, 63, 235);
     position: relative;
 
     &:hover {
-      width: 26%;
+      width: 40%;
 
       .subCard {
         margin-left: 0px;
@@ -98,6 +100,37 @@ $light-blue: rgb(33, 63, 235);
           transform: scale(1.05);
           background-color: $light-blue;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    .card:nth-child(6) {
+      display: none;
+    }
+    .card {
+      width: 20%;
+      &:hover {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .container {
+    .card:nth-child(6) {
+      display: none;
+    }
+    .card:nth-child(5) {
+      display: none;
+    }
+    .card {
+      width: 25%;
+      &:hover {
+        width: 200%;
       }
     }
   }
