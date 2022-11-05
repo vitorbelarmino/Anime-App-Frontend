@@ -145,9 +145,12 @@ $medium: 1060px;
 @media (max-width: $small) {
   .anime-container {
     .content-container {
+      .content-top {
+        @include fastDisplay(flex-start, flex-start, column, wrap);
+      }
       .video {
         .trailer {
-          width: 100% !important;
+          width: 100%;
         }
       }
       .anime-list {
