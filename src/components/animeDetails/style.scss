@@ -116,7 +116,6 @@ $medium: 1060px;
         .anime-info {
           .anime-info-top {
             .anime-info-left {
-              border: 2px solid red;
               width: 100% !important;
 
               h1 {
@@ -157,7 +156,7 @@ $medium: 1060px;
           @include fastDisplay(center, flex-start, row, nowrap);
 
           width: 100%;
-          border-radius: 0px;
+          border-radius: 25px;
           .list-image {
             width: 100%;
             max-width: 150px;
