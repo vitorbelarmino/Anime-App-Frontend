@@ -53,23 +53,15 @@ export function AnimeDetails(): JSX.Element {
                 <div className="anime-info-left">
                   <h1>{anime.title}</h1>
                   <div className="anime-length">
-                    <p className="anime-length-content">{`Number of episodes: ${
-                      anime.episodes as number
-                    }`}</p>
-                    <p className="anime-length-content">{`Duration: ${anime.duration.slice(
+                    <p>{`Number of episodes: ${anime.episodes as number}`}</p>
+                    <p>{`Duration: ${anime.duration.slice(
                       0,
                       2
                     )} min per episode`}</p>
-                  </div>
-                  <div className="scores">
-                    <div className="score-content">
-                      <p>{`Score: ${anime.score as number}`}</p>
-                      <p>{`Ranked ${anime.rank as number}`}</p>
-                    </div>
-                    <div className="score-content">
-                      <p>{`Popularity: ${anime.popularity}`}</p>
-                      <p>{`Members: ${anime.members}`}</p>
-                    </div>
+                    <p>{`Score: ${anime.score as number}`}</p>
+                    <p>{`Ranked ${anime.rank as number}`}</p>
+                    <p>{`Popularity: ${anime.popularity}`}</p>
+                    <p>{`Members: ${anime.members}`}</p>
                   </div>
                 </div>
                 <div className="anime-info-right">
@@ -86,8 +78,22 @@ export function AnimeDetails(): JSX.Element {
                   ></iframe>
                 </div>
               </div>
-              <p>{`Synopsis: ${anime.synopsis as string}`}</p>
             </div>
+          </div>
+          <div className="synopsis">
+            <p>{'Synopsis:'}</p>
+            <p>{anime.synopsis}</p>
+          </div>
+          <div className="video">
+            <p>Assista ao trailer:</p>
+            <iframe
+              src={
+                anime.trailer.embed_url?.replace('play=1', 'play=0') as string
+              }
+              frameBorder="0"
+              title={anime.title}
+              className="trailer"
+            ></iframe>
           </div>
           <div className="anime-list">
             {episodeList.slice(0, 8).map((ep, index) => (

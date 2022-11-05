@@ -10,6 +10,8 @@ $medium-gray: rgb(75, 75, 77);
 $dark-gray: rgb(39, 41, 41);
 $dark-blue: rgb(20, 20, 97);
 $light-blue: rgb(33, 63, 235);
+$small: 530px;
+$medium: 1060px;
 
 .anime-container {
   @include fastDisplay(center, center, row, nowrap);
@@ -25,65 +27,57 @@ $light-blue: rgb(33, 63, 235);
     .content-top {
       @include fastDisplay(flex-start, flex-start, row, nowrap);
 
-      .anime-image {
-        width: 300px;
-        height: 100%;
+      img {
+        width: 270px;
+        height: 250px;
+        border-radius: 25px;
       }
 
       .anime-info {
-        width: 70%;
-        height: 100%;
+        width: 90%;
 
         .anime-info-top {
-          @include fastDisplay(center, space-around, row, nowrap);
+          @include fastDisplay(center, flex-start, row, nowrap);
           margin-bottom: 10px;
-          h1 {
-            margin: 10px 10px;
-          }
 
-          .anime-length {
-            @include fastDisplay(flex-start, flex-start, row, nowrap);
-            width: 100%;
-            padding: 10px;
-            background-color: $medium-gray;
-            border-radius: 10px;
-            margin-bottom: 5px;
+          .anime-info-left {
+            width: 60%;
 
-            .anime-length-content {
-              width: 50%;
-              height: 60px;
-              margin-right: 10px;
-              padding: 10px;
-              border: 2px solid $dark-blue;
-              border-radius: 10px;
+            h1 {
+              margin: 10px 10px;
             }
-          }
-          .scores {
-            @include fastDisplay(flex-start, flex-start, row, nowrap);
-            width: 100%;
-            padding: 10px;
-            background-color: $medium-gray;
-            border-radius: 10px;
-            margin-bottom: 5px;
 
-            .score-content {
-              width: 50%;
+            .anime-length {
+              width: 100%;
               padding: 10px;
-              border: 2px solid $dark-blue;
+              // background-color: $medium-gray;
               border-radius: 10px;
-              margin-right: 10px;
+              margin-bottom: 5px;
+
+              p {
+                margin: 10px 0px;
+                color: white;
+              }
             }
           }
         }
 
         .anime-info-right {
-          width: 40%;
+          // width: 40%;
           .trailer {
             width: 100%;
-            height: 200px;
+            height: 250px;
           }
         }
       }
+    }
+    .synopsis {
+      p {
+        margin: 10px 0px;
+      }
+    }
+    .video {
+      display: none;
     }
 
     .anime-list {
@@ -110,6 +104,67 @@ $light-blue: rgb(33, 63, 235);
         margin-bottom: 5px;
         width: 140px;
         height: 120px;
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .anime-container {
+    .content-container {
+      .content-top {
+        .anime-info {
+          .anime-info-top {
+            .anime-info-left {
+              border: 2px solid red;
+              width: 100% !important;
+
+              h1 {
+                font-size: 27px;
+              }
+            }
+            .anime-info-right {
+              display: none;
+            }
+          }
+        }
+      }
+      .video {
+        @include fastDisplay(flex-start, flex-start, column, nowrap);
+        p {
+          margin: 10px 0px;
+        }
+        height: 290px;
+        .trailer {
+          width: 450px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: $small) {
+  .anime-container {
+    .content-container {
+      .video {
+        .trailer {
+          width: 100% !important;
+        }
+      }
+      .anime-list {
+        @include fastDisplay(flex-start, flex-start, column, wrap);
+        .anime-card {
+          @include fastDisplay(center, flex-start, row, nowrap);
+
+          width: 100%;
+          border-radius: 0px;
+          .list-image {
+            width: 100%;
+            max-width: 150px;
+            height: 130px;
+            margin-right: 5px;
+          }
+        }
       }
     }
   }
