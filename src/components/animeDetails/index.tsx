@@ -53,13 +53,24 @@ export function AnimeDetails(): JSX.Element {
                 <div className="anime-info-left">
                   <h1>{anime.title}</h1>
                   <div className="anime-length">
-                    <p>{`Number of episodes: ${anime.episodes as number}`}</p>
-                    <p>{`Duration: ${anime.duration.slice(
-                      0,
-                      2
-                    )} min per episode`}</p>
-                    <p>{`Score: ${anime.score as number}`}</p>
-                    <p>{`Ranked ${anime.rank as number}`}</p>
+                    {anime.episodes !== null ? (
+                      <p>{`Number of episodes: ${anime.episodes}`}</p>
+                    ) : (
+                      <p>Number of episodes: ainda não informado meu rei</p>
+                    )}
+                    <p>{`Duration: ${anime.duration}`}</p>
+                    {anime.score !== null ? (
+                      <p>{`Score: ${anime.score}`}</p>
+                    ) : (
+                      <p>Score: ainda não informado meu rei</p>
+                    )}
+
+                    {anime.rank !== null ? (
+                      <p>{`Ranked ${anime.rank}`}</p>
+                    ) : (
+                      <p>Ranked: ainda não informado meu rei</p>
+                    )}
+
                     <p>{`Popularity: ${anime.popularity}`}</p>
                     <p>{`Members: ${anime.members}`}</p>
                   </div>
