@@ -3,7 +3,7 @@
 
 ## 💻 Projeto
 
-Um Site de review de anime, que utiliza a API do Jikan, a qual usa raspagem de dados do site MyAnimeList. Neste projeto, é possível ver os lançamentos e animes mais antigos, ver detalhes dos animes e de cada episódio, como sinopse,ranking, score, entre outras informações.
+Um Site de review de anime, que utiliza a API do Jikan. Neste projeto, é possível ver os lançamentos e animes mais antigos, ver detalhes dos animes e de cada episódio, como sinopse,ranking, score, entre outras informações.
 
 </br>
 
