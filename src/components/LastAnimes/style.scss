@@ -14,7 +14,7 @@
   .last-animes {
     @include fastDisplay(center, center, row, wrap);
     min-height: 62vh;
-    width: 90%;
+    width: 80%;
 
     .card-anime {
       @include fastDisplay(flex-start, space-between, column, nowrap);
