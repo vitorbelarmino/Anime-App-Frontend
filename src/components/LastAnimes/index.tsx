@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Context from '../../context/context';
-// import { CategoriesDivider } from '../CategoriesDivider';
 import './style.scss';
 
 interface IProps {
