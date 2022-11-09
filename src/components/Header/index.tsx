@@ -57,8 +57,8 @@ export function Header(): JSX.Element {
             )}
             <HeaderProfile />
           </div>
-          {hamburgerActive && <HeaderLinks />}
           {searchActive && <Search />}
+          {hamburgerActive && <HeaderLinks />}
         </header>
       )}
     </>

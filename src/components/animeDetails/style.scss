@@ -115,7 +115,7 @@ $medium: 1060px;
         .anime-info {
           .anime-info-top {
             .anime-info-left {
-              width: 100% !important;
+              width: 100%;
 
               h1 {
                 font-size: 27px;
@@ -147,7 +147,7 @@ $medium: 1060px;
       .content-top {
         @include fastDisplay(flex-start, flex-start, column, wrap);
       }
-      .video {
+      .video-bottom {
         .trailer {
           width: 100%;
         }
