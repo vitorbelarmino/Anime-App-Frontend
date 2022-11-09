@@ -8,6 +8,8 @@
 $light-gray: rgb(179, 175, 175);
 $medium-gray: rgb(75, 75, 77);
 $dark-gray: rgb(39, 41, 41);
+$small: 530px;
+$medium: 800px;
 
 .episode-container {
   @include fastDisplay(center, center, row, nowrap);
@@ -17,30 +19,31 @@ $dark-gray: rgb(39, 41, 41);
     background-color: #343434;
     padding: 10px;
     margin-bottom: 10px;
-    // height: 400px;
     width: 80%;
     border-radius: 25px;
 
-    .episode-image {
-      width: 300px;
-      height: 100%;
-      border-radius: 25px;
-    }
-
-    .episode-info {
-      width: 70%;
-      height: 100%;
-
-      h1 {
-        margin: 10px 20px;
-      }
-
-      p {
-        margin: 15px 20px;
-      }
-    }
     .content-top {
       @include fastDisplay(flex-start, flex-start, row, nowrap);
+      .episode-image {
+        width: 50%;
+        max-width: 300px;
+        height: 100%;
+        border-radius: 25px;
+      }
+
+      .episode-info {
+        width: 50%;
+        height: 100%;
+
+        h1 {
+          margin: 10px 20px;
+        }
+
+        p {
+          margin: 15px 20px;
+        }
+      }
+      // background-color: red;
     }
 
     .episodes-list {
@@ -67,6 +70,45 @@ $dark-gray: rgb(39, 41, 41);
         margin-bottom: 5px;
         width: 140px;
         height: 120px;
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .episode-container {
+    .content-container {
+      .content-top {
+        @include fastDisplay(flex-start, flex-start, column, nowrap);
+        .episode-image {
+          width: 100%;
+          height: 350px;
+          margin-left: 20px;
+        }
+        .episode-info {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .episode-container {
+    .content-container {
+      .episodes-list {
+        @include fastDisplay(flex-start, flex-start, column, nowrap);
+        .episode-card {
+          @include fastDisplay(center, flex-start, row, nowrap);
+          width: 100%;
+          border-radius: 25px;
+          .list-image {
+            width: 100%;
+            max-width: 150px;
+            height: 130px;
+            margin-right: 5px;
+          }
+        }
       }
     }
   }

@@ -11,9 +11,9 @@ export function Home(): JSX.Element {
       <Header />
       <Highlights />
       <CategoriesDivider name="Últimos episódios" path="/lastEpisodes" />
-      <LatestEpisodes quantity={8} />
+      <LatestEpisodes quantity={15} />
       <CategoriesDivider name="Últimos animes" path="/lastAnimes" />
-      <LastAnimes quantity={15} />
+      <LastAnimes quantity={18} />
       <Footer />
     </div>
   );

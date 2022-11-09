@@ -1,30 +1,30 @@
-@mixin fastDisplay($x, $y, $z) {
+@mixin fastDisplay($a, $x, $y, $z) {
   display: flex;
-  align-items: center;
+  align-items: $a;
   justify-content: $x;
   flex-flow: $y $z;
 }
 
+$small: 530px;
+$medium: 1060px;
 $light-gray: rgb(179, 175, 175);
 $medium-gray: rgb(75, 75, 77);
 $dark-gray: rgb(39, 41, 41);
 $dark-blue: rgb(20, 20, 97);
 $light-blue: rgb(33, 63, 235);
 
-header {
-  display: flex;
-  flex-direction: row;
-  padding: 37px 88px;
-  align-items: center;
+.header-content {
+  @include fastDisplay(center, space-between, row, nowrap);
+  padding: 30px 3%;
 
-  img {
+  .logo {
     cursor: pointer;
   }
 
   .center {
-    @include fastDisplay(flex-start, row, wrap);
+    @include fastDisplay(center, flex-start, row, nowrap);
     padding: 0px 28px;
-    width: 70%;
+    width: 100%;
 
     .link {
       color: $light-gray;
@@ -34,17 +34,28 @@ header {
       transition: 0.5s;
 
       &:hover {
-        // padding: 5px 15px;
-        // margin: 0px 3px;
-        // background-color: $light-gray;
         border-radius: 25px;
         color: $light-blue;
       }
     }
   }
   .right {
-    @include fastDisplay(flex-start, row, nowrap);
+    @include fastDisplay(center, flex-start, row, nowrap);
 
+    .search {
+      @include fastDisplay(center, flex-start, row, nowrap);
+      position: relative;
+      transition: 0.9s;
+
+      input {
+        margin: 0px 5px;
+        height: 33px;
+        border-radius: 10px;
+        border-style: none;
+        color: black;
+        padding: 0px 15px;
+      }
+    }
     .icon {
       background-color: $dark-gray;
       border-radius: 100%;
@@ -56,6 +67,98 @@ header {
       &:hover {
         background-color: $medium-gray;
         transform: scale(1.15);
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  header {
+    .header-content {
+      @include fastDisplay(center, space-between, row, wrap);
+
+      .hamburger {
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+          transform: scale(1.15);
+        }
+      }
+
+      .right {
+        .search {
+          input {
+            margin: 0px 5px;
+            height: 33px;
+            border-radius: 10px;
+            border-style: none;
+            color: black;
+            padding: 0px 15px;
+          }
+        }
+      }
+    }
+    .center {
+      @include fastDisplay(center, flex-start, row, nowrap);
+      padding: 0px 5%;
+      margin-bottom: 10px;
+
+      .link {
+        color: $light-gray;
+        font-size: 17px;
+        padding: 0px 10px;
+        text-decoration: none;
+        transition: 0.5s;
+
+        &:hover {
+          border-radius: 25px;
+          color: $light-blue;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  header {
+    .search {
+      @include fastDisplay(center, flex-start, row, nowrap);
+      padding: 0px 4%;
+      width: 100%;
+
+      .icon {
+        background-color: $dark-gray;
+        border-radius: 100%;
+        padding: 7px;
+        margin: 5px;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: $medium-gray;
+          transform: scale(1.15);
+        }
+      }
+
+      input {
+        width: 100%;
+        margin: 0px 5px;
+        height: 33px;
+        border-radius: 10px;
+        border-style: none;
+        color: black;
+        padding: 0px 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  header {
+    .header-content {
+      .center {
+        @include fastDisplay(center, flex-start, row, wrap);
       }
     }
   }

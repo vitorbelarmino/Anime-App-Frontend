@@ -1,13 +1,49 @@
-.loading-container {
+@mixin fastDisplay($a, $x, $y, $z) {
   display: flex;
-  align-items: flex-end;
-  justify-content: end;
+  align-items: $a;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
 
-  h1 {
-    padding-bottom: 30px;
+$medium: 800px;
+$small: 570px;
+
+.loading-container {
+  @include fastDisplay(center, center, row, nowrap);
+  width: 90%;
+  .text-container {
+    @include fastDisplay(center, center, row, nowrap);
+
+    h1 {
+      padding-bottom: 30px;
+      margin-left: 10px;
+    }
   }
 
   .loading-image {
     height: 200px;
+  }
+}
+
+@media (max-width: $medium) {
+  .loading-container {
+    .text-container {
+      @include fastDisplay(flex-start, center, column, nowrap);
+
+      h1 {
+        padding-bottom: 5px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .loading-container {
+    @include fastDisplay(center, center, column, nowrap);
+
+    .loading-image {
+      order: -1;
+    }
   }
 }

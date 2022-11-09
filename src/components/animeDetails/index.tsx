@@ -6,6 +6,7 @@ import { IEpisode } from '../../interfaces/IEpisode';
 import { fetchAnimeById, fetchEpisodeDetailsList } from '../../utils/api';
 import { Loading } from '../loading';
 import './style.scss';
+import { Trailer } from './trailer';
 
 interface IAnimeDetails {
   anime: IAnime;
@@ -53,42 +54,55 @@ export function AnimeDetails(): JSX.Element {
                 <div className="anime-info-left">
                   <h1>{anime.title}</h1>
                   <div className="anime-length">
-                    <p className="anime-length-content">{`Number of episodes: ${
-                      anime.episodes as number
-                    }`}</p>
-                    <p className="anime-length-content">{`Duration: ${anime.duration.slice(
-                      0,
-                      2
-                    )} min per episode`}</p>
-                  </div>
-                  <div className="scores">
-                    <div className="score-content">
-                      <p>{`Score: ${anime.score as number}`}</p>
-                      <p>{`Ranked ${anime.rank as number}`}</p>
-                    </div>
-                    <div className="score-content">
-                      <p>{`Popularity: ${anime.popularity}`}</p>
-                      <p>{`Members: ${anime.members}`}</p>
-                    </div>
+                    {anime.episodes !== null ? (
+                      <p>{`Number of episodes: ${anime.episodes}`}</p>
+                    ) : (
+                      <p>Number of episodes: ainda não informado meu rei</p>
+                    )}
+                    <p>{`Duration: ${anime.duration}`}</p>
+                    {anime.score !== null ? (
+                      <p>{`Score: ${anime.score}`}</p>
+                    ) : (
+                      <p>Score: ainda não informado meu rei</p>
+                    )}
+
+                    {anime.rank !== null ? (
+                      <p>{`Ranked ${anime.rank}`}</p>
+                    ) : (
+                      <p>Ranked: ainda não informado meu rei</p>
+                    )}
+
+                    <p>{`Popularity: ${anime.popularity}`}</p>
+                    <p>{`Members: ${anime.members}`}</p>
                   </div>
                 </div>
                 <div className="anime-info-right">
-                  <iframe
-                    src={
-                      anime.trailer.embed_url?.replace(
-                        'play=1',
-                        'play=0'
-                      ) as string
-                    }
-                    frameBorder="0"
-                    title={anime.title}
-                    className="trailer"
-                  ></iframe>
+                  {anime.trailer.embed_url !== null && (
+                    <Trailer
+                      title={anime.title}
+                      path={anime.trailer.embed_url}
+                      class="top"
+                    />
+                  )}
                 </div>
               </div>
-              <p>{`Synopsis: ${anime.synopsis as string}`}</p>
             </div>
           </div>
+          <div className="synopsis">
+            <p>{'Synopsis:'}</p>
+            <p>{anime.synopsis}</p>
+          </div>
+          {/* <Trailer
+            title={anime.title}
+            path={anime.trailer.embed_url as string}
+          /> */}
+          {anime.trailer.embed_url !== null && (
+            <Trailer
+              title={anime.title}
+              path={anime.trailer.embed_url}
+              class="bottom"
+            />
+          )}
           <div className="anime-list">
             {episodeList.slice(0, 8).map((ep, index) => (
               <div

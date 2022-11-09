@@ -12,15 +12,15 @@
     margin-bottom: 10px;
   }
   .last-animes {
-    @include fastDisplay(center, space-between, row, wrap);
+    @include fastDisplay(center, center, row, wrap);
     min-height: 62vh;
-    width: 75%;
+    width: 80%;
 
     .card-anime {
       @include fastDisplay(flex-start, space-between, column, nowrap);
-      width: 16%;
+      width: 170px;
       height: 300px;
-      margin: 10px 15px;
+      margin: 10px 10px;
       border-radius: 5%;
       cursor: pointer;
       transition: 0.5s;
@@ -32,6 +32,17 @@
 
       &:hover {
         transform: scale(1.04);
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .body-animes {
+    .last-animes {
+      width: 100%;
+      .card-anime {
+        width: 70%;
       }
     }
   }

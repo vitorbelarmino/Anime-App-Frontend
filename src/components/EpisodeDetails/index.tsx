@@ -68,10 +68,19 @@ export function EpisodeDetails(): JSX.Element {
             />
             <div className="episode-info">
               <h1>{animeDetails.episode.title}</h1>
-              <p>{`Duration: ${Math.ceil(
-                animeDetails.episode.duration / 60
-              )} min`}</p>
-              <p>{`Synopsis: ${animeDetails.episode?.synopsis}`}</p>
+              {animeDetails.episode.duration === 0 ? (
+                <p>{`Duration: ${Math.ceil(
+                  animeDetails.episode.duration / 60
+                )} min`}</p>
+              ) : (
+                <p>Duration: ainda não informado </p>
+              )}
+
+              {animeDetails.episode.synopsis !== null ? (
+                <p>{`Synopsis: ${animeDetails.episode.synopsis}`}</p>
+              ) : (
+                <p>Synopsis: Sem synopsis patrão</p>
+              )}
             </div>
           </div>
           <div className="episodes-list">

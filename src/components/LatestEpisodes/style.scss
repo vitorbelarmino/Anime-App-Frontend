@@ -5,6 +5,9 @@
   flex-flow: $y $z;
 }
 
+$small: 640px;
+$medium: 1060px;
+
 .body-episodes {
   @include fastDisplay(center, center, column, wrap);
 
@@ -16,13 +19,13 @@
   .last-episodes {
     @include fastDisplay(center, center, row, wrap);
     min-height: 62vh;
-    width: 75%;
+    width: 85%;
 
     .episode-card {
       @include fastDisplay(flex-start, flex-end, column, nowrap);
-      width: 22%;
+      width: 250px;
       height: 200px;
-      margin: 10px 15px;
+      margin: 10px 10px;
       border-radius: 2%;
       cursor: pointer;
       transition: 0.5s;
@@ -35,6 +38,41 @@
 
       &:hover {
         transform: scale(1.04);
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .body-episodes {
+    .last-episodes {
+      width: 100%;
+
+      .episode-card {
+      }
+    }
+  }
+}
+
+@media (max-width: 810px) {
+  .body-episodes {
+    .last-episodes {
+      width: 100%;
+
+      .episode-card {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .body-episodes {
+    .last-episodes {
+      width: 100%;
+
+      .episode-card {
+        width: 100%;
       }
     }
   }
