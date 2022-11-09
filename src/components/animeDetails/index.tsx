@@ -6,6 +6,7 @@ import { IEpisode } from '../../interfaces/IEpisode';
 import { fetchAnimeById, fetchEpisodeDetailsList } from '../../utils/api';
 import { Loading } from '../loading';
 import './style.scss';
+import { Trailer } from './trailer';
 
 interface IAnimeDetails {
   anime: IAnime;
@@ -76,17 +77,13 @@ export function AnimeDetails(): JSX.Element {
                   </div>
                 </div>
                 <div className="anime-info-right">
-                  <iframe
-                    src={
-                      anime.trailer.embed_url?.replace(
-                        'play=1',
-                        'play=0'
-                      ) as string
-                    }
-                    frameBorder="0"
-                    title={anime.title}
-                    className="trailer"
-                  ></iframe>
+                  {anime.trailer.embed_url !== null && (
+                    <Trailer
+                      title={anime.title}
+                      path={anime.trailer.embed_url}
+                      class="top"
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -95,17 +92,17 @@ export function AnimeDetails(): JSX.Element {
             <p>{'Synopsis:'}</p>
             <p>{anime.synopsis}</p>
           </div>
-          <div className="video">
-            <p>Assista ao trailer:</p>
-            <iframe
-              src={
-                anime.trailer.embed_url?.replace('play=1', 'play=0') as string
-              }
-              frameBorder="0"
+          {/* <Trailer
+            title={anime.title}
+            path={anime.trailer.embed_url as string}
+          /> */}
+          {anime.trailer.embed_url !== null && (
+            <Trailer
               title={anime.title}
-              className="trailer"
-            ></iframe>
-          </div>
+              path={anime.trailer.embed_url}
+              class="bottom"
+            />
+          )}
           <div className="anime-list">
             {episodeList.slice(0, 8).map((ep, index) => (
               <div

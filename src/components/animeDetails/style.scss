@@ -63,7 +63,6 @@ $medium: 1060px;
         }
 
         .anime-info-right {
-          // width: 40%;
           .trailer {
             width: 100%;
             height: 250px;
@@ -76,7 +75,7 @@ $medium: 1060px;
         margin: 10px 0px;
       }
     }
-    .video {
+    .video-bottom {
       display: none;
     }
 
@@ -128,7 +127,7 @@ $medium: 1060px;
           }
         }
       }
-      .video {
+      .video-bottom {
         @include fastDisplay(flex-start, flex-start, column, nowrap);
         p {
           margin: 10px 0px;
